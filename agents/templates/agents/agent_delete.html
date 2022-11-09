@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %} {% load tailwind_filters %}
+<div class="max-w-lg mx-auto">
+  <a href="{% url 'agents:agent-list' %}" class="hover:text-blue-500"
+    ><-- Go back to the agents</a
+  >
+  <hr />
+  <h1 class="text-3xl mt-3 md-1 text-gray-700">
+    Are you sure want to delete agent?
+  </h1>
+  <form method="post">
+    {% csrf_token %} {{form|crispy}}
+    <button
+      type="submit"
+      class="text-white w-full bg-blue-400 hover:bg-blue-300 mt-3 px-3 py-2 rounded-md"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+{% endblock content %}
