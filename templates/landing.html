@@ -12,11 +12,13 @@
         <p class="mb-8 leading-relaxed">
             This CRM helps you manage your leads.
         </p>
+        {% if not request.user.is_authenticated%}
         <div class="flex justify-center">
           <a href="{% url 'login' %}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
             Login to get started
           </a>
         </div>
+        {% endif %}
       </div>
     </div>
 </section>
